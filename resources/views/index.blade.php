@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -12,7 +12,6 @@
     <link rel="stylesheet" href="{{ asset('assets/css/styles.css') }}">
 
     <title>Anthony Junior Lapada - Personal Portfolio</title>
-
 </head>
 
 <body class="bg-page" id="top">
@@ -40,9 +39,10 @@
         </div>
     </header>
 
-    <!-- Hero -->
+    <!-- MAIN SECTION -->
     <main id="main" class="main">
-        <section class="hero" id="hero">
+        {{-- HOME SECTION --}}
+        <section class="hero" id="home">
             <div class="container hero-grid">
                 <aside class="hero-left">
                     <div class="avatar-wrap">
@@ -52,21 +52,24 @@
 
                     <ul class="socials" aria-label="Social links">
                         <li>
-                            <a href="#" aria-label="GitHub">
+                            <a href="https://github.com/itshyeiin" target="_blank" aria-label="GitHub">
                                 <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
                                     <path
                                         d="M12 .5A12 12 0 0 0 0 12.7c0 5.4 3.4 9.9 8.1 11.5.6.1.8-.3.8-.6v-2c-3.3.7-4-1.5-4-1.5-.5-1.3-1.1-1.6-1.1-1.6-.9-.6.1-.6.1-.6 1 .1 1.5 1.1 1.5 1.1.9 1.6 2.4 1.1 3 .8.1-.6.4-1.1.7-1.3-2.6-.3-5.4-1.3-5.4-5.8 0-1.3.5-2.4 1.1-3.3-.1-.3-.5-1.6.1-3.2 0 0 .9-.3 3 .1a10.4 10.4 0 0 1 5.4 0c2.1-.4 3-.1 3-.1.6 1.6.2 2.9.1 3.2.7.9 1.1 2 1.1 3.3 0 4.5-2.8 5.4-5.4 5.8.4.4.8 1 .8 2.1v3.1c0 .3.2.7.8.6A12.2 12.2 0 0 0 24 12.7C24 5.9 18.6.5 12 .5z" />
                                 </svg>
                             </a>
                         </li>
+
                         <li>
-                            <a href="#" aria-label="LinkedIn">
+                            <a href="https://www.linkedin.com/in/anthony-junior-lapada-206968244/" target="_blank"
+                                aria-label="LinkedIn">
                                 <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
                                     <path
                                         d="M4.98 3.5C4.98 4.9 3.9 6 2.5 6S0 4.9 0 3.5 1.1 1 2.5 1s2.48 1.1 2.48 2.5zM.5 8h4V24h-4V8zm7.5 0h3.8v2.2h.1c.5-1 1.8-2.2 3.8-2.2 4.1 0 4.9 2.7 4.9 6.2V24h-4v-7.1c0-1.7 0-3.9-2.4-3.9-2.4 0-2.8 1.8-2.8 3.8V24h-4V8z" />
                                 </svg>
                             </a>
                         </li>
+
                         <li>
                             <a href="#" aria-label="Email">
                                 <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
@@ -95,36 +98,59 @@
                     <div class="blob" aria-hidden="true"></div>
                 </section>
             </div>
-
-            {{-- <a href="#about" class="scroll-down" data-scroll>Scroll Down</a> --}}
         </section>
 
+        {{-- ABOUT SECTION --}}
         <section id="about" class="section alt">
             <div class="container">
-                <h2 class="title">About</h2>
-                <p class="lead subtitle">I’m a frontend developer &amp; SEO specialist focused on building fast,
-                    accessible
-                    interfaces with clean, readable UI. Below is a quick snapshot of my experience, education, and
-                    skills.
+                <h2 class="about_section_title">About</h2>
+                <p class="about_section_subtitle">I am Anthony Junior Lapada, an aspiring IT professional currently
+                    completing my Bachelor of Science in Information Technology at the Technological University of the
+                    Philippines (graduated August 2025). With hands-on experience as a Fullstack Web Developer and
+                    Microsoft Developer Intern, I have developed strong skills in web development, responsive design,
+                    and cloud-based solutions. My thesis project, Mayah's Go Digital, reflects my passion for creating
+                    practical systems that improve user experience and business operations.
+                </p>
+
+                <p class="about_section_subtitle">
+                    Beyond development, I also bring expertise as an SEO Specialist, combining technical knowledge with
+                    digital marketing strategies to help businesses grow online. My involvement in organizations such as
+                    Boluntaryong TUPians and TUP Tech Guild has strengthened my leadership, teamwork, and design skills.
+                </p>
+
+                <p class="about_section_subtitle">
+                    Technically, I am proficient in Laravel, PHP, JavaScript, HTML, CSS, and tools like Git, Figma,
+                    and Photoshop. I am also experienced in software testing, network configuration, and Agile
+                    methodologies. My interests extend to graphic design, community outreach, basketball, and technology
+                    innovation, showcasing a balance of creativity, collaboration, and technical expertise.
+                </p>
+
+                <p class="about_section_subtitle">
+                    I thrive in dynamic environments where I can leverage my skills to build impactful digital
+                    solutions, contribute to community initiatives, and continuously grow as a developer and innovator.
                 </p>
 
                 <section class="experience" aria-label="Experience">
                     <ol class="exp-list">
                         <li class="exp-item">
                             <div class="exp-header">
-                                <h3 class="exp-role">Full‑stack Web Developer · Baclaran Church – Volunteer Management
+                                <h3 class="exp-role">Full-stack Web Developer · Baclaran Church – Volunteer Management
                                     System (Freelance)</h3>
                                 <span class="exp-date">Mar 2025 — Jul 2025</span>
                             </div>
-                            <p class="exp-summary">Shipped a volunteer management system end‑to‑end, from data model to
-                                responsive UI.</p>
+
+                            <p class="exp-summary">Shipped a volunteer management system end-to-end, from data model to
+                                responsive UI.
+                            </p>
+
                             <ul class="exp-points">
-                                <li>Built CRUD modules and role‑based access; streamlined onboarding and scheduling.
+                                <li>Built CRUD modules and role-based access; streamlined onboarding and scheduling.
                                 </li>
                                 <li>Implemented responsive layouts and accessible forms with clean component patterns.
                                 </li>
                                 <li>Improved DX with clear folder structure, linting, and Git workflow.</li>
                             </ul>
+
                             <ul class="exp-tech">
                                 <li>Laravel</li>
                                 <li>JavaScript</li>
@@ -139,12 +165,16 @@
                                 <h3 class="exp-role">Microsoft Developer · Hacktiv Colab Inc. (Internship)</h3>
                                 <span class="exp-date">Feb 2025 — May 2025</span>
                             </div>
+
                             <p class="exp-summary">Supported feature delivery and bug fixing in a collaborative, agile
-                                environment.</p>
+                                environment.
+                            </p>
+
                             <ul class="exp-points">
                                 <li>Contributed to sprints, tickets, and code reviews.</li>
                                 <li>Wrote small UI utilities and improved form validation and error states.</li>
                             </ul>
+
                             <ul class="exp-tech">
                                 <li>JavaScript</li>
                                 <li>Git</li>
@@ -157,13 +187,17 @@
                                 <h3 class="exp-role">SEO Specialist · BrotherCamp</h3>
                                 <span class="exp-date">May 2023 — Jul 2024</span>
                             </div>
+
                             <p class="exp-summary">Boosted organic visibility through technical fixes, content
-                                optimization, and reporting.</p>
+                                optimization, and reporting.
+                            </p>
+
                             <ul class="exp-points">
-                                <li>Ran audits, fixed CWV and indexing issues, and delivered keyword‑led content briefs.
+                                <li>Ran audits, fixed CWV and indexing issues, and delivered keyword-led content briefs.
                                 </li>
                                 <li>Set up GA4 &amp; Search Console dashboards for ongoing insights.</li>
                             </ul>
+
                             <ul class="exp-tech">
                                 <li>GA4</li>
                                 <li>GSC</li>
@@ -175,6 +209,7 @@
                 </section>
 
                 <section class="about-grid" aria-label="Education and Skills">
+                    {{-- EDUCATION --}}
                     <div class="about-card">
                         <h3 class="about-title">Education</h3>
                         <p class="about-meta">
@@ -183,61 +218,125 @@
                         </p>
 
                         <p class="about-note"><strong>Graduation:</strong> August 2025</p>
-
-                        <p class="about-note"><strong>Thesis:</strong> “Mayah’s Go Digital” (E‑commerce with inventory
-                            management)</p>
+                        <p class="about-note"><strong>Thesis:</strong> “Mayah’s Go Digital” (E-commerce with inventory
+                            management)
+                        </p>
                     </div>
 
-                    <div class="about-card">
-                        <h3 class="about-title">Tech Stack</h3>
-                        <ul class="tags">
-                            <li>Laravel</li>
-                            <li>JavaScript</li>
-                            <li>Python</li>
-                            <li>HTML</li>
-                            <li>CSS</li>
-                            <li>Responsive Web Design</li>
-                            <li>DOM Manipulation</li>
-                            <li>Git</li>
-                            <li>Figma</li>
-                            <li>Photoshop</li>
-                            <li>SEO</li>
-                        </ul>
+                    {{-- TECH STACK --}}
+                    <div class="about-card stack-simple" aria-labelledby="stack-title">
+                        <h3 class="about-title" id="stack-title">Tech Stack</h3>
+
+                        <div class="stack_group">
+                            <h4 class="stack_category">Frontend</h4>
+                            <ul class="stack_list">
+                                <li>HTML</li>
+                                <li>CSS</li>
+                                <li>JavaScript</li>
+                                <li>Responsive Web Design</li>
+                                <li>DOM Manipulation</li>
+                            </ul>
+                        </div>
+
+                        <div class="stack-footer">
+                            <button class="btn-link" data-modal-open="stackModal" aria-haspopup="dialog"
+                                aria-controls="stackModal">
+                                View all
+                                <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path d="M7 17l5-5-5-5m6 10l5-5-5-5" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" />
+                                </svg>
+                            </button>
+                        </div>
                     </div>
 
+                    {{-- CERTIFICATION AND TRAININGS --}}
                     <div class="about-card">
                         <h3 class="about-title">Certifications &amp; Training</h3>
                         <ul class="bullets">
                             <li>Sololearn: HTML, CSS, JS, Responsive Web Design (2022)</li>
                             <li>DICT: Python Beginners &amp; Intermediate (2022)</li>
                         </ul>
+
+                        <div class="stack-footer">
+                            <button class="btn-link" data-modal-open="stackModal" aria-haspopup="dialog"
+                                aria-controls="stackModal">
+                                View all
+                                <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path d="M7 17l5-5-5-5m6 10l5-5-5-5" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" />
+                                </svg>
+                            </button>
+                        </div>
                     </div>
                 </section>
             </div>
         </section>
 
-        <section id="portfolio" class="section">
+        {{-- <section id="portfolio" class="section">
             <div class="container">
                 <h3>Portfolio</h3>
                 <p>…</p>
             </div>
-        </section>
-
-        {{-- <section id="skills" class="section alt">
-            <div class="container">
-                <h3>Skills</h3>
-                <p>…</p>
-            </div>
         </section> --}}
+
+        {{-- MODAL --}}
+        <div class="modal" id="stackModal" role="dialog" aria-modal="true" aria-labelledby="stackModalTitle"
+            hidden>
+            <div class="modal__backdrop" data-modal-close aria-hidden="true"></div>
+
+            <div class="modal__card" role="document">
+                <header class="modal__header">
+                    <h3 id="stackModalTitle">All Tech Stack</h3>
+                    <button class="icon-button" data-modal-close aria-label="Close">&times;</button>
+                </header>
+
+                <div class="modal__body">
+                    <div class="modal__section">
+                        <h4>Frontend</h4>
+                        <ul class="chips">
+                            <li class="chip">HTML</li>
+                            <li class="chip">CSS</li>
+                            <li class="chip">JavaScript</li>
+                            <li class="chip">Responsive Web Design</li>
+                            <li class="chip">DOM Manipulation</li>
+                        </ul>
+                    </div>
+
+                    <div class="modal__section">
+                        <h4>Backend</h4>
+                        <ul class="chips">
+                            <li class="chip">Laravel</li>
+                            <li class="chip">Python</li>
+                        </ul>
+                    </div>
+
+                    <div class="modal__section">
+                        <h4>Tools & Others</h4>
+                        <ul class="chips">
+                            <li class="chip">Git</li>
+                            <li class="chip">Figma</li>
+                            <li class="chip">Photoshop</li>
+                            <li class="chip">SEO</li>
+                            <li class="chip">GA4</li>
+                            <li class="chip">GSC</li>
+                            <li class="chip">Ahrefs</li>
+                            <li class="chip">Schemas</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
 
+    {{-- FOOTER --}}
     <footer id="contact" class="site-footer">
         <div class="container">
-            <p>© <span id="year"></span> Anthony Junior Lapada. All rights reserved.</p>
+            <p>© <span id="year"></span> <strong>Anthony Junior Lapada.</strong> All rights reserved.</p>
         </div>
     </footer>
 
-    <!--=============== MAIN JS ===============-->
+    {{-- MAIN JS --}}
     <script src="{{ asset('assets/js/main.js') }}"></script>
 </body>
 
