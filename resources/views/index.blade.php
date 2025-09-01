@@ -19,17 +19,20 @@
         <div class="container header-inner">
             <a class="brand" href="#top">Anthony Junior Lapada</a>
 
-            <button class="menu-toggle" aria-label="Open menu" data-menu-toggle>
+            <!-- Menu button now wired with A11y -->
+            <button class="menu-toggle" aria-label="Open menu" aria-controls="site-nav" aria-expanded="false"
+                data-menu-toggle>
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
                     <path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
                 </svg>
             </button>
 
-            <nav class="nav" data-menu hidden>
+            <!-- Nav gains an id so aria-controls works -->
+            <nav id="site-nav" class="nav" data-menu hidden>
                 <a href="#home" class="active" data-scroll>Home</a>
                 <a href="#about" data-scroll>About</a>
-                <a href="#skills" data-scroll>Skills</a>
-                <a href="#contact" data-scroll>Contact</a>
+                {{-- <a href="#experience" data-scroll>Exp</a> --}}
+                <a href="#projects" data-scroll>Projects</a>
                 <button class="theme-toggle" aria-label="Toggle dark mode" data-theme-toggle>
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                         <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
@@ -71,7 +74,8 @@
                         </li>
 
                         <li>
-                            <a href="#" aria-label="Email">
+                            <!-- Email now points to a real mailto -->
+                            <a href="mailto:anthonyjuniorlapada@gmail.com" aria-label="Email">
                                 <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
                                     <path
                                         d="M20 4H4c-1.1 0-2 .9-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5L4 8V6l8 5 8-5v2z" />
@@ -91,7 +95,8 @@
                     </p>
 
                     <div class="cta-group">
-                        <a href="#portfolio" class="btn btn-primary" data-cta="primary" data-scroll>View My Work</a>
+                        <!-- data-cta="primary" ensures black text in dark mode via CSS -->
+                        <a href="#projects" class="btn btn-primary" data-cta="primary" data-scroll>View My Work</a>
                         <a href="#contact" class="btn btn-ghost" data-scroll>Contact Me</a>
                     </div>
 
@@ -129,9 +134,43 @@
                     I thrive in dynamic environments where I can leverage my skills to build impactful digital
                     solutions, contribute to community initiatives, and continuously grow as a developer and innovator.
                 </p>
+            </div>
+        </section>
 
-                <section class="experience" aria-label="Experience">
+        {{-- EXPERIENCE SECTION --}}
+        <section id="about" class="section">
+            <div class="container">
+                <h2 class="about_section_title">Experience</h2>
+
+                <div class="experience" aria-label="Experience">
                     <ol class="exp-list">
+                        <li class="exp-item">
+                            <div class="exp-header">
+                                <h3 class="exp-role">Junior Frontend Developer · Western Pacific Tech Ecosystem</h3>
+                                <span class="exp-date">Currently Employed</span>
+                            </div>
+
+                            <p class="exp-summary">Shipped a volunteer management system end-to-end, from data model to
+                                responsive UI.
+                            </p>
+
+                            <ul class="exp-points">
+                                <li>Built CRUD modules and role-based access; streamlined onboarding and scheduling.
+                                </li>
+                                <li>Implemented responsive layouts and accessible forms with clean component patterns.
+                                </li>
+                                <li>Improved DX with clear folder structure, linting, and Git workflow.</li>
+                            </ul>
+
+                            <ul class="exp-tech">
+                                <li>Laravel</li>
+                                <li>JavaScript</li>
+                                <li>HTML</li>
+                                <li>CSS</li>
+                                <li>Git</li>
+                            </ul>
+                        </li>
+
                         <li class="exp-item">
                             <div class="exp-header">
                                 <h3 class="exp-role">Full-stack Web Developer · Baclaran Church – Volunteer Management
@@ -206,9 +245,9 @@
                             </ul>
                         </li>
                     </ol>
-                </section>
+                </div>
 
-                <section class="about-grid" aria-label="Education and Skills">
+                <div id="skills" class="about-grid" aria-label="Education and Skills">
                     {{-- EDUCATION --}}
                     <div class="about-card">
                         <h3 class="about-title">Education</h3>
@@ -239,7 +278,7 @@
                         </div>
 
                         <div class="stack-footer">
-                            <button class="btn-link" data-modal-open="stackModal" aria-haspopup="dialog"
+                            <button class="btn-link" data-modal-target="#stackModal" aria-haspopup="dialog"
                                 aria-controls="stackModal">
                                 View all
                                 <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true">
@@ -259,7 +298,8 @@
                         </ul>
 
                         <div class="stack-footer">
-                            <button class="btn-link" data-modal-open="stackModal" aria-haspopup="dialog"
+                            <!-- Updated: use the same data-modal-target -->
+                            <button class="btn-link" data-modal-target="#stackModal" aria-haspopup="dialog"
                                 aria-controls="stackModal">
                                 View all
                                 <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true">
@@ -269,23 +309,88 @@
                             </button>
                         </div>
                     </div>
-                </section>
+                </div>
             </div>
         </section>
 
-        {{-- <section id="portfolio" class="section">
+        {{-- PROJECT SECTION --}}
+        <section id="projects" class="section alt">
             <div class="container">
-                <h3>Portfolio</h3>
-                <p>…</p>
+                <h2 class="about_section_title">PROJECTS</h2>
+                <div id="skills" class="about-grid" aria-label="Education and Skills">
+                    {{-- EDUCATION --}}
+                    <div class="about-card">
+                        <h3 class="about-title">Education</h3>
+                        <p class="about-meta">
+                            <strong>B.S. in Information Technology</strong><br>
+                            Technological University of the Philippines
+                        </p>
+
+                        <p class="about-note"><strong>Graduation:</strong> August 2025</p>
+                        <p class="about-note"><strong>Thesis:</strong> “Mayah’s Go Digital” (E-commerce with inventory
+                            management)
+                        </p>
+                    </div>
+
+                    {{-- TECH STACK --}}
+                    <div class="about-card stack-simple" aria-labelledby="stack-title">
+                        <h3 class="about-title" id="stack-title">Tech Stack</h3>
+
+                        <div class="stack_group">
+                            <h4 class="stack_category">Frontend</h4>
+                            <ul class="stack_list">
+                                <li>HTML</li>
+                                <li>CSS</li>
+                                <li>JavaScript</li>
+                                <li>Responsive Web Design</li>
+                                <li>DOM Manipulation</li>
+                            </ul>
+                        </div>
+
+                        <div class="stack-footer">
+                            <button class="btn-link" data-modal-target="#stackModal" aria-haspopup="dialog"
+                                aria-controls="stackModal">
+                                View all
+                                <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path d="M7 17l5-5-5-5m6 10l5-5-5-5" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    {{-- CERTIFICATION AND TRAININGS --}}
+                    <div class="about-card">
+                        <h3 class="about-title">Certifications &amp; Training</h3>
+                        <ul class="bullets">
+                            <li>Sololearn: HTML, CSS, JS, Responsive Web Design (2022)</li>
+                            <li>DICT: Python Beginners &amp; Intermediate (2022)</li>
+                        </ul>
+
+                        <div class="stack-footer">
+                            <!-- Updated: use the same data-modal-target -->
+                            <button class="btn-link" data-modal-target="#stackModal" aria-haspopup="dialog"
+                                aria-controls="stackModal">
+                                View all
+                                <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path d="M7 17l5-5-5-5m6 10l5-5-5-5" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </section> --}}
+        </section>
 
         {{-- MODAL --}}
-        <div class="modal" id="stackModal" role="dialog" aria-modal="true" aria-labelledby="stackModalTitle"
-            hidden>
+        <!-- Updated wrapper: uses data-modal + aria-hidden for JS control -->
+        <div class="modal" id="stackModal" data-modal aria-hidden="true" hidden>
             <div class="modal__backdrop" data-modal-close aria-hidden="true"></div>
 
-            <div class="modal__card" role="document">
+            <!-- Dialog has proper ARIA + data-modal-dialog -->
+            <div class="modal__card" data-modal-dialog role="dialog" aria-modal="true"
+                aria-labelledby="stackModalTitle">
                 <header class="modal__header">
                     <h3 id="stackModalTitle">All Tech Stack</h3>
                     <button class="icon-button" data-modal-close aria-label="Close">&times;</button>
@@ -307,7 +412,8 @@
                         <h4>Backend</h4>
                         <ul class="chips">
                             <li class="chip">Laravel</li>
-                            <li class="chip">Python</li>
+                            <li class="chip">PHP</li>
+                            <li class="chip">MYSQL</li>
                         </ul>
                     </div>
 
@@ -338,6 +444,8 @@
 
     {{-- MAIN JS --}}
     <script src="{{ asset('assets/js/main.js') }}"></script>
+    {{-- SCROLL REVEAL --}}
+    <script src="https://unpkg.com/scrollreveal"></script>
 </body>
 
 </html>

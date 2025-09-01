@@ -7,6 +7,10 @@
     --line: #e5e7eb;
     --brand: #111827;
     --accent: #3b82f6;
+
+    /* Modal theme variables (use base tokens so they auto-theme) */
+    --modal-bg: var(--panel);
+    --modal-fg: var(--ink);
 }
 
 :root.dark {
@@ -16,6 +20,10 @@
     --muted: #a3adc2;
     --line: #1f2a44;
     --brand: #e5e7eb;
+
+    /* Modal theme variables (dark follow base tokens) */
+    --modal-bg: var(--panel);
+    --modal-fg: var(--ink);
 }
 
 * {
@@ -290,9 +298,14 @@ img {
     background: radial-gradient(closest-side, rgba(59, 130, 246, .30), rgba(59, 130, 246, 0) 70%)
 }
 
+/* Only the hero CTA (dark mode text = black for contrast) */
+:root.dark [data-cta="primary"] {
+    color: #000;
+}
+
 /* ===== Sections / Footer ===== */
 .section {
-    padding: 4rem 0
+    padding: 2rem 0
 }
 
 .section.alt {
@@ -452,11 +465,12 @@ img {
     font-size: .85rem;
     color: var(--muted);
     transition: .3s ease-in-out;
+    cursor: pointer;
 }
 
 .exp-tech li:hover {
     transform: translateY(-1px);
-    box-shadow: 0 10px 24px rgba(0, 0, 0, .08)
+    box-shadow: 0 10px 24px rgba(0, 0, 0, .08);
 }
 
 .stack_category {
@@ -482,6 +496,7 @@ img {
     font-size: .85rem;
     color: var(--muted);
     transition: .3s ease-in-out;
+    cursor: pointer;
 }
 
 .stack_list li:hover {
@@ -532,7 +547,7 @@ img {
 
 /* --- VIEW ALL MODAL --- */
 .modal[hidden] {
-    display: none !important;
+    display: none;
 }
 
 .modal {
@@ -541,6 +556,10 @@ img {
     display: grid;
     place-items: center;
     z-index: 1000;
+
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .3s ease;
 }
 
 .modal__backdrop {
@@ -551,12 +570,27 @@ img {
 
 .modal__card {
     position: relative;
-    width: min(720px, 92vw);
-    background: var(--surface, #0f1220);
-    color: var(--text, #e7e9ee);
+    width: min(720px, calc(100% - 2rem));
+    background: var(--modal-bg);
+    color: var(--modal-fg);
     border-radius: 16px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, .35);
-    padding: 1rem 1.25rem 1.25rem;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, .25);
+    padding: 1.25rem 1.25rem 1.5rem;
+
+    /* pop-in */
+    transform: translateY(10px) scale(.98);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity .28s ease;
+}
+
+.modal.is-open .modal__card {
+    transform: none;
+    opacity: 1;
+}
+
+.modal.is-open {
+    opacity: 1;
+    pointer-events: auto;
 }
 
 .modal__header {
@@ -564,9 +598,7 @@ img {
     align-items: center;
     justify-content: space-between;
     gap: .5rem;
-    margin-bottom: .75rem;
     border-bottom: 1px solid rgba(255, 255, 255, .06);
-    padding-bottom: .5rem;
 }
 
 .modal__body {
@@ -595,16 +627,18 @@ img {
 .chip {
     display: inline-flex;
     align-items: center;
-    gap: .35ch;
     padding: .35rem .6rem;
     border-radius: 999px;
-    line-height: 1;
-    background: var(--chip-bg, #1a1f2d);
-    border: 1px solid rgba(255, 255, 255, .08);
-    font-size: .82rem;
-    font-weight: 600;
-    color: #e7e9ee;
-    white-space: nowrap;
+    border: 1px solid var(--line);
+    font-size: .85rem;
+    color: var(--muted);
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.chips li:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, .08)
 }
 
 .icon-button {
@@ -614,8 +648,4 @@ img {
     line-height: 1;
     cursor: pointer;
     color: inherit;
-}
-
-.no-scroll {
-    overflow: hidden;
 }
